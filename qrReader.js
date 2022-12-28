@@ -50,13 +50,13 @@ webpackJsonp([0],[/*!***********************************************!*\
   \**********************//*! exports provided: default *//*! exports used: default */function(a,b,c){"use strict";function d(a){return new Promise((b,c)=>{const d=new FileReader;d.readAsArrayBuffer(a),d.addEventListener("loadend",(a)=>{const d=a.srcElement.result,e=i.a.decode(d),f=i.a.toRGBA8(e)[0],h=g()(new Uint8ClampedArray(f),e.width,e.height);h?b(h):c(new Error("decode failed"))})})}function e(a){try{return btoa(atob(a))===a}catch(a){return!1}}var f=c(/*! jsqr */10),g=c.n(f),h=c(/*! upng-js */11),i=c.n(h),j=c(/*! ./b64toBlob */22);b.a=(a)=>{if(!a)throw new Error("need File object or image url");let b=null;return"[object File]"===Object.prototype.toString.call(a)?(b=a.slice(),d(b)):e(a)?(b=Object(j.a)(a),d(b)):new Promise((c,f)=>{const e=new XMLHttpRequest;e.open("GET",a),e.responseType="blob",e.onload=()=>{200<=e.status&&300>e.status?(b=e.response,d(b).then((a)=>c(a)).catch((a)=>f(a))):f(e.statusText)},e.onerror=()=>f(e.statusText),e.send()})}}},[7]);
   function reverse_mashup(){
     const gert = document.getElementById("content").innerHTML;
-    alert("working: "+gert);
+    alert("If working : "+gert);
     const gert2 = parseInt(gert);
     var conversion = Number(gert2).toString(2);
-    alert("binary: "+conversion);
+    /*alert("binary: "+conversion);*/
     const length = conversion.length;
     const new_bin = conversion.slice(1, length);
-    alert("new binary: "+new_bin);
+    /*alert("new binary: "+new_bin);*/
     function text2Binary(string) {
       return string.split('').map(function (char) {
           return char.charCodeAt(0).toString(2);
@@ -64,7 +64,7 @@ webpackJsonp([0],[/*!***********************************************!*\
   }
     var str_p_1 = document.getElementById("reverse_Personal_1").value;
     var str_p_2 = text2Binary(str_p_1);
-    alert("personal str: "+str_p_2);
+    /*alert("personal str: "+str_p_2);*/
     var personal_len = str_p_2.length;
     var mashup_len = new_bin.length;
     if(mashup_len > personal_len)
@@ -75,7 +75,7 @@ webpackJsonp([0],[/*!***********************************************!*\
             personal_len = personal_len + 1;
         }
     }
-    alert("corrected length"+str_p_2);
+    /*alert("corrected length"+str_p_2);*/
     const XOR= [];
     for(let i=0; i<mashup_len; i++)
     {
@@ -98,7 +98,7 @@ webpackJsonp([0],[/*!***********************************************!*\
     }
     let information_raw = XOR.toString();
     const info_raw = information_raw.replaceAll(",","");
-    alert("Information Bin: "+info_raw);
+    /*alert("Information Bin: "+info_raw);*/
     var parts = info_raw.match(/.{1,7}/g);
      var new_value = parts.join(" "); //returns 123-456-789
     var final_letter=
