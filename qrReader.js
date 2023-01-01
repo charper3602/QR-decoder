@@ -49,22 +49,66 @@ webpackJsonp([0],[/*!***********************************************!*\
   !*** ./src/index.js ***!
   \**********************//*! exports provided: default *//*! exports used: default */function(a,b,c){"use strict";function d(a){return new Promise((b,c)=>{const d=new FileReader;d.readAsArrayBuffer(a),d.addEventListener("loadend",(a)=>{const d=a.srcElement.result,e=i.a.decode(d),f=i.a.toRGBA8(e)[0],h=g()(new Uint8ClampedArray(f),e.width,e.height);h?b(h):c(new Error("decode failed"))})})}function e(a){try{return btoa(atob(a))===a}catch(a){return!1}}var f=c(/*! jsqr */10),g=c.n(f),h=c(/*! upng-js */11),i=c.n(h),j=c(/*! ./b64toBlob */22);b.a=(a)=>{if(!a)throw new Error("need File object or image url");let b=null;return"[object File]"===Object.prototype.toString.call(a)?(b=a.slice(),d(b)):e(a)?(b=Object(j.a)(a),d(b)):new Promise((c,f)=>{const e=new XMLHttpRequest;e.open("GET",a),e.responseType="blob",e.onload=()=>{200<=e.status&&300>e.status?(b=e.response,d(b).then((a)=>c(a)).catch((a)=>f(a))):f(e.statusText)},e.onerror=()=>f(e.statusText),e.send()})}}},[7]);
   function reverse_mashup(){
+    function formatBigInt(values, base) {
+        //convert array of digit values to bigint string
+        for (var bigint = '', i = 0; i < values.length; i++) {
+          bigint += values[i].toString(base);
+        }
+        return bigint;
+      }      
+    function parseBigInt(bigint, base) {
+        //convert bigint string to array of digit values
+        for (var values = [], i = 0; i < bigint.length; i++) {
+          values[i] = parseInt(bigint.charAt(i), base);
+        }
+        return values;
+      }
+    function convertBase(bigint, inputBase, outputBase) {
+        //takes a bigint string and converts to different base
+        var inputValues = parseBigInt(bigint, inputBase),
+          outputValues = [], //output array, little-endian/lsd order
+          remainder,
+          len = inputValues.length,
+          pos = 0,
+          i;
+        while (pos < len) { //while digits left in input array
+          remainder = 0; //set remainder to 0
+          for (i = pos; i < len; i++) {
+            //long integer division of input values divided by output base
+            //remainder is added to output array
+            remainder = inputValues[i] + remainder * inputBase;
+            inputValues[i] = Math.floor(remainder / outputBase);
+            remainder -= inputValues[i] * outputBase;
+            if (inputValues[i] == 0 && i == pos) {
+              pos++;
+            }
+          }
+          outputValues.push(remainder);
+        }
+        outputValues.reverse(); //transform to big-endian/msd order
+        return formatBigInt(outputValues, outputBase);
+      }
     const gert = document.getElementById("content").innerHTML;
     alert("Mashup: "+gert);
-    const gert2 = parseInt(gert);
-    var conversion = Number(gert2).toString(2);
+    /*var gert2 = parseInt(gert);*/
+    var conversion = convertBase(gert,16,2);
     /*alert("binary: "+conversion);*/
     const length = conversion.length;
     const new_bin = conversion.slice(1, length);
     /*alert("new binary: "+new_bin);*/
     function text2Binary(string) {
       return string.split('').map(function (char) {
-          return char.charCodeAt(0).toString(2);
+        if ((char.charCodeAt(0).toString(2)).length != 7) {
+            return '0'+ char.charCodeAt(0).toString(2) ;
+        }
+        else {
+            return char.charCodeAt(0).toString(2);
+        }
       }).join('');
   }
     var str_p_1 = document.getElementById("reverse_Personal_1").value;
     var str_p_2 = text2Binary(str_p_1);
-    /*alert("personal str: "+str_p_2);*/
+    ("personal str: "+str_p_2);
     var personal_len = str_p_2.length;
     var mashup_len = new_bin.length;
     if(mashup_len > personal_len)
@@ -101,10 +145,12 @@ webpackJsonp([0],[/*!***********************************************!*\
     /*alert("Information Bin: "+info_raw);*/
     var parts = info_raw.match(/.{1,7}/g);
      var new_value = parts.join(" "); //returns 123-456-789
+     /*alert("new parts: "+new_value);*/
     var final_letter=
-          new_value.replace(/\d+./g,x=>String.fromCharCode('0b'+x))
+          new_value.replace(/\d+./g,x=>String.fromCharCode('0b'+x));
     /*alert("Final: "+ final_letter);*/
     var final_str = final_letter.replace(/\0/g,'');
     alert("Decoded Message: "+final_str);
   }
+  
   
