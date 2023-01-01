@@ -110,7 +110,7 @@ function encode()
     var str = document.getElementById("Information").value; 
     var str2= document.getElementById("Personal_1").value; 
     var str3 = text2Binary(str);
-    alert("text to binary: "+str3);
+    /*alert("text to binary: "+str3);*/
     var str4 = text2Binary(str2);
     var len1 = str3.length;
     var len2 = str4.length;
@@ -160,16 +160,16 @@ function encode()
     let mashup_raw = XOR.toString();
     const mashup= mashup_raw.replaceAll(",","");
     /*var reverse= p2^xor;*/
-    alert("Binary P1: "+str3);
+    /*alert("Binary P1: "+str3);
     alert("Binary P2: "+str4);
     alert("Binary XOR: "+mashup);
     /*alert("Binary combine: "+combine);*/
     var solution = "1"+mashup; 
-    alert("solution: "+solution); 
-    alert("solution int:"+ BigInt(solution));
+    /*alert("solution: "+solution); 
+    alert("solution int:"+ BigInt(solution));*/
     var p3 = convertBase(solution,2,16).toUpperCase();
     /*var p3 = DecimalToBinary(hexa);*/
-    alert("Binary mashup: "+p3);
+    alert("Mashup: "+p3);
 makeQR = (your_data) => {
     let qrcodeContainer = document.getElementById("qrcode");
       qrcodeContainer.innerHTML = "";
