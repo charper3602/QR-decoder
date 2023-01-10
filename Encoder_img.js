@@ -60,7 +60,7 @@ function text2Binary(string) {
 function encode()
 {
     var str = url; 
-    var str2= document.getElementById("Personal_1").value; 
+    var str2= document.getElementById("Personal_1_img").value; 
     var str3 = text2Binary(str);
     /*alert("text to binary: "+str3);*/
     var str4 = text2Binary(str2);
