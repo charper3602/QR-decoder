@@ -112,9 +112,9 @@ function encode()
     let mashup_raw = XOR.toString();
     const mashup= mashup_raw.replaceAll(",","");
     /*var reverse= p2^xor;*/
-    alert("Binary P1: "+str3);
+    /*alert("Binary P1: "+str3);
     alert("Binary P2: "+str4);
-    alert("Binary XOR: "+mashup);
+    alert("Binary XOR: "+mashup);*/
     /*alert("Binary combine: "+combine);*/
     var solution = "1"+mashup; 
     /*alert("solution: "+solution); 
