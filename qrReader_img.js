@@ -106,7 +106,7 @@ webpackJsonp([0],[/*!***********************************************!*\
         }
       }).join('');
   }
-    var str_p_1 = document.getElementById("reverse_Personal_1").value;
+    var str_p_1 = document.getElementById("reverse_Personal_1_img").value;
     var str_p_2 = text2Binary(str_p_1);
     ("personal str: "+str_p_2);
     var personal_len = str_p_2.length;
