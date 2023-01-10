@@ -1,4 +1,4 @@
-function mashup()
+function mashup_img()
 {
     var Element = document.querySelector('input');
     var img = document.querySelector('img');
