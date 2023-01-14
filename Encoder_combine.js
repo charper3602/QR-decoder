@@ -1,6 +1,7 @@
 function mashup_img()
 {
-    if(document.getElementById("input").files.length == 0){
+    let fileInputField = document.getElementById("input");
+    if(fileInputField.files.length == 0){
         alert("No File Selected");}
     else{
     var Element = document.querySelector('input');
