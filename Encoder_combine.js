@@ -150,10 +150,11 @@ function downloadQR() {
 }
 encode()
 }
+}
 function mashup(){
     if((document.getElementById("Information").value.length ==0)||(document.getElementById("Personal_1_img").value.length ==0)){
         alert('Fill Text Feilds');}
-        else{
+    else {
     function text2Binary(string) {
         return string.split('').map(function (char) {
             if ((char.charCodeAt(0).toString(2)).length != 7) {
@@ -539,5 +540,4 @@ function mashup(){
        makeQR(P3)
     }
     encode()
-    }
 }
