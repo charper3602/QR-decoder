@@ -152,7 +152,7 @@ encode()
 }
 function mashup(){
     if((document.getElementById("Information").value.length ==0)||(document.getElementById("Personal_1_img").value.length ==0)){
-        alert('Fill Text Feilds');
+        alert('Fill Text Feilds');}
         else{
     function text2Binary(string) {
         return string.split('').map(function (char) {
