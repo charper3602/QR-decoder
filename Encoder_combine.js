@@ -2,7 +2,7 @@ function mashup_img()
 {
     let fileInputField = document.getElementById("input");
     if((fileInputField.files.length < 1) || (document.getElementById("Personal_1_img").value =='')){
-        alert("No File Selected");}
+        alert("Fill File or Text Field");}
     else{
     var Element = document.querySelector('input');
     var img = document.querySelector('img');
@@ -153,7 +153,7 @@ encode()
 }
 function mashup(){
     if((document.getElementById("Information").value =='')||(document.getElementById("Personal_1_img").value =='')){
-        alert('Fill Text Feilds');}
+        alert('Fill Text Fields');}
     else {
     function text2Binary(string) {
         return string.split('').map(function (char) {
