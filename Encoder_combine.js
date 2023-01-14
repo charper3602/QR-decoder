@@ -151,7 +151,7 @@ function downloadQR() {
 encode()
 }
 function mashup(){
-    if((document.getElementById("Information").value ==='')||(document.getElementById("Personal_1_img").value ==='')){
+    if((document.getElementById("Information").value.length ==0)||(document.getElementById("Personal_1_img").value.length ==0)){
         alert('Fill Text Feilds');
         else{
     function text2Binary(string) {
