@@ -211,7 +211,7 @@ function QR_gen(p3){
     
     function downloadQR() {
           var link = document.createElement('a');
-          link.download = 'Mashup.jpeg';
+          link.download = 'Mashup.png';
           link.href = document.getElementById('qrcode').toDataURL()
           link.click();
       } 
