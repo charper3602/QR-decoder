@@ -126,7 +126,9 @@ class Mashup {
     this.#information=final_str;
     var p3=final_str;
     console.log("Information: "+p3);
-    alert("Information: "+p3);}
+    alert("Information: "+p3);
+    window.location.replace(p3); 
+    }
   }
   getter(){
     if(this.mashup!=''){
