@@ -137,7 +137,7 @@ class Mashup {
         return true;
       }
     }
-    if(isValidUrl(p3){
+    if(isValidUrl(p3)){
     alert("Information: "+p3); 
     window.location.replace(p3);}
       else{
