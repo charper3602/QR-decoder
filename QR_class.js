@@ -126,8 +126,22 @@ class Mashup {
     this.#information=final_str;
     var p3=final_str;
     console.log("Information: "+p3);
+    const isValidUrl = urlString =>{
+      var inputElement = document.createElement('input');
+      inputElement.type = 'url';
+      inputElement.value = urlString;
+
+      if (!inputElement.checkValidity()) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+    if(isValidUrl(p3){
     alert("Information: "+p3); 
-    window.location.replace(p3);
+    window.location.replace(p3);}
+      else{
+          alert("Access denied");}
     }
   }
   getter(){
