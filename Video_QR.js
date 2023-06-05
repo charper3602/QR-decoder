@@ -30,6 +30,23 @@
         padding:50,
       }); // generate QR code in canvas
       downloadQR(); // function to download the image
+     function video_qr_1(){
+    var list_n= encode_n();
+    var createGIF = function() {
+  gifshot.createGIF({
+    images: list_n,
+    interval: .8
+  }, function(obj) {
+    if (!obj.error) {
+      var image = obj.image,
+        animatedImage = document.getElementById('animatedGIF');
+      animatedImage.src = image;
+    }
+  })
+};
+createGIF();
+}
+document.getElementById('qrcode').style.display = 'none';
 
   }
 function downloadQR() {
@@ -41,4 +58,20 @@ function downloadQR() {
    makeQR(str_array[i])
  }
  document.getElementById('qrcode').style.display = 'none';
+}
+function video_qr_1(){
+    var list_n= encode_n();
+    var createGIF = function() {
+  gifshot.createGIF({
+    images: list_n,
+    interval: .8
+  }, function(obj) {
+    if (!obj.error) {
+      var image = obj.image,
+        animatedImage = document.getElementById('animatedGIF');
+      animatedImage.src = image;
+    }
+  })
+};
+createGIF();
 }
