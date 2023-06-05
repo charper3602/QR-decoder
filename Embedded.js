@@ -40,7 +40,7 @@ function encoden(str){
     inter2.splice(1,1);
     QR_gen(inter2);}
    else{
-        document.getElementById('qrcode2').style.display = 'none';
+        document.getElementById('qrcode3').style.display = 'none';
     }
         html5QrcodeScanner.clear();
 }
@@ -55,7 +55,7 @@ return BigInt(charCodeArr.join(''));
       }
       function QR_gen(p3){
         makeQR = (your_data) => {
-            let qrcodeContainer = document.getElementById("qrcode2");
+            let qrcodeContainer = document.getElementById("qrcode3");
               qrcodeContainer.innerHTML = "";
               new QRious({
                 element: qrcodeContainer,
