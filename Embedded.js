@@ -41,7 +41,7 @@ function encoden(str){
         // Handle on success condition with the decoded text or result.
         console.log(decodedText);
         var tot= decodedText;
-        var inter= encode(tot);
+        var inter= encoden(tot);
     document.getElementById("demo").innerHTML= inter[0];
     if(inter.length>1){
      var geno2= new Converter();
