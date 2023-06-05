@@ -19,7 +19,7 @@ function encoden(str){
   }
   function p_display(){
     var html5QrcodeScanner = new Html5QrcodeScanner(
-        "reader", { fps: 10, qrbox: 250 });       
+        "reader2", { fps: 10, qrbox: 250 });       
     function onScanSuccess(decodedText, decodedResult) {
         // Handle on success condition with the decoded text or result.
         console.log(decodedText);
