@@ -1,4 +1,4 @@
- function encode_n(){
+function encode_n(){
      var fileinput= document.getElementById("file_n");
      var url_list=[];
      var i;
@@ -21,7 +21,7 @@
       var count= count+1;
       var count_str = count.toString()
     makeQR = (your_data) => {
-    let qrcodeContainer = document.getElementById("qrcode");
+    let qrcodeContainer = document.getElementById("qrcode2");
       qrcodeContainer.innerHTML = "";
       new QRious({
         element: qrcodeContainer,
@@ -30,34 +30,17 @@
         padding:50,
       }); // generate QR code in canvas
       downloadQR(); // function to download the image
-     function video_qr_1(){
-    var list_n= encode_n();
-    var createGIF = function() {
-  gifshot.createGIF({
-    images: list_n,
-    interval: .8
-  }, function(obj) {
-    if (!obj.error) {
-      var image = obj.image,
-        animatedImage = document.getElementById('animatedGIF');
-      animatedImage.src = image;
-    }
-  })
-};
-createGIF();
-}
-document.getElementById('qrcode').style.display = 'none';
 
   }
 function downloadQR() {
       var link = document.createElement('a');
       link.download = str_name+count_str+'.jpeg';
-      link.href = document.getElementById('qrcode').toDataURL()
+      link.href = document.getElementById('qrcode2').toDataURL()
       link.click();
   } 
    makeQR(str_array[i])
  }
- document.getElementById('qrcode').style.display = 'none';
+ document.getElementById('qrcode2').style.display = 'none';
 }
 function video_qr_1(){
     var list_n= encode_n();
@@ -75,3 +58,4 @@ function video_qr_1(){
 };
 createGIF();
 }
+document.getElementById('qrcode2').style.display = 'none';
