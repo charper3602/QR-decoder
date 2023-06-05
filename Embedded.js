@@ -3,7 +3,7 @@ function encoden(str){
     return spr; 
   }
   function p_seqence(){
-    var info= document.getElementById("Information").value;
+    var info= document.getElementById("Information_n").value;
     var inter=encoden(info);
     var inter3=[];
     for(let i=0; i<(inter.length);i++){
