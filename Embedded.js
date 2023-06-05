@@ -1,10 +1,10 @@
-function encode(str){
+function encoden(str){
     var spr= str.split(",");
     return spr; 
   }
   function p_seqence(){
     var info= document.getElementById("Information").value;
-    var inter=encode(info);
+    var inter=encoden(info);
     var inter3=[];
     var geno2= new Converter();
     for(let i=0; i<(inter.length);i++){
@@ -20,7 +20,7 @@ function encode(str){
   }
   function p_seqence_only(){
     var info= document.getElementById("Information").value;
-    var inter=encode(info);
+    var inter=encoden(info);
     var inter3=[];
     for(let i=0; i<(inter.length);i++){
        inter3.push(getCharCodes(inter[i]));
