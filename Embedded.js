@@ -73,7 +73,7 @@ return BigInt(charCodeArr.join(''));
       }
       function QR_gen(p3){
         makeQR = (your_data) => {
-            let qrcodeContainer = document.getElementById("qrcode");
+            let qrcodeContainer = document.getElementById("qrcode2");
               qrcodeContainer.innerHTML = "";
               new QRious({
                 element: qrcodeContainer,
