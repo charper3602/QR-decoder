@@ -58,4 +58,4 @@ function video_qr_1(){
 };
 createGIF();
 }
-document.getElementById('qrcode2').style.display = 'none';
+
