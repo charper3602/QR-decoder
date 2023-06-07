@@ -222,7 +222,7 @@ function QR_gen(p3){
             padding:50,
           }); // generate QR code in canvas
           downloadQR(); // function to download the image
-    
+    document.getElementById('qrcode').style.display = 'none';
       }
     
     function downloadQR() {
