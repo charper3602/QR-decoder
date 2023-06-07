@@ -14,7 +14,7 @@ function encoden(str){
         inter2.push((inter3[i]-inter3[i+1]));
      }
      inter2.unshift(inter[0]);
-     QR_gen(inter2);
+     QR_genx(inter2);
      return inter2; 
   }
   function p_display(){
@@ -38,7 +38,7 @@ function encoden(str){
     var inter2=inter;
     inter2[0]=convert;
     inter2.splice(1,1);
-    QR_gen(inter2);}
+    QR_genx(inter2);}
    else{
         document.getElementById('qrcode3').style.display = 'none';
     }
@@ -53,7 +53,7 @@ return html5QrcodeScanner.render(onScanSuccess);}
 }
 return BigInt(charCodeArr.join(''));
       }
-      function QR_gen(p3){
+      function QR_genx(p3){
         makeQR = (your_data) => {
             let qrcodeContainer = document.getElementById("qrcode3");
               qrcodeContainer.innerHTML = "";
