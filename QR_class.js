@@ -333,6 +333,26 @@ function array_driver(){
     test_n.iterated= this.iterated;
     array_qr(test_n);
 }
+function combine_scanner(test){
+    var indicator=0;
+    var html5QrcodeScanner = new Html5QrcodeScanner(
+        "reader", { fps: 10, qrbox: 250 });
+    function onScanSuccess(decodedText, decodedResult) {
+        // Handle on success condition with the decoded text or result.
+         console.log(decodedText);
+         test.iterated.push(decodedText);
+         test.iterated=array_qr_combine(test);
+        if((test.iterated.length>1)&&(indicator==0)){
+            test.reverse_mashup((test.iterated)[0],(test.iterated)[1]);
+            indicator=1;
+        }
+    }
+    return html5QrcodeScanner.render(onScanSuccess);
+}
+function combine_driver(){
+    var test_n = new Mashup();
+    combine_scanner(test_n);
+}
 }
 catch(error){
     console.error(error+"Error has occured");
