@@ -71,6 +71,7 @@ class Mashup {
         console.log("Mashup: "+p3);
         alert("Mashup: "+p3);
         QR_gen(this.mashup);
+        document.getElementById('qrcode').style.display = 'none';
   }}
   reverse_mashup(mash,key){
     if((mash=='')||(key=='')){
