@@ -235,6 +235,31 @@ function QR_gen(p3){
        var P3 = p3.toString();
        makeQR(P3)
     }
+
+function QR_gen_2(p3){
+    makeQR = (your_data) => {
+        let qrcodeContainer = document.getElementById("qrcode");
+          qrcodeContainer.innerHTML = "";
+          new QRious({
+            element: qrcodeContainer,
+            value: your_data,
+            size: 500,
+            padding:50,
+          }); // generate QR code in canvas
+          downloadQR_2(); // function to download the image
+    
+      }
+    
+    function downloadQR_2() {
+          var link = document.createElement('a');
+          link.download = 'Key.png';
+          link.href = document.getElementById('qrcode').toDataURL()
+          link.click();
+      } 
+       var P3 = p3.toString();
+       makeQR(P3)
+    }
+
 function scanner(test,key){
     var html5QrcodeScanner = new Html5QrcodeScanner(
         "reader", { fps: 10, qrbox: 250 });       
@@ -325,7 +350,7 @@ function mashup_driver_demo(){
     var key= document.getElementById("Personal_1").value;
     test.setter(info,key);
     test.mashup_(info,key);
-    QR_gen(key);
+    QR_gen_2(key);
 }
 function reverse_mashup_driver(){
     var test_n = new Mashup();
