@@ -237,7 +237,7 @@ function QR_gen(p3){
     }
 
 function QR_gen_2(p3){
-    makeQR = (your_data) => {
+    makeQR2 = (your_data) => {
         let qrcodeContainer = document.getElementById("qrcode");
           qrcodeContainer.innerHTML = "";
           new QRious({
@@ -257,7 +257,7 @@ function QR_gen_2(p3){
           link.click();
       } 
        var P3 = p3.toString();
-       makeQR(P3)
+       makeQR2(P3)
     }
 
 function scanner(test,key){
