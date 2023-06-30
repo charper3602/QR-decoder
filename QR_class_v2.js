@@ -327,7 +327,11 @@ function array_qr(test){
         return arr.filter((item,
             index) => arr.indexOf(item) === index);
     }
-        alert(removeDuplicates(test.iterated));
+        var jar= removeDuplicates(test.iterated);
+        var jar2= jar.join("");
+        alert(jar2);
+     window.location.replace(jar2);
+    
 }
 function array_qr_combine(test){
     function removeDuplicates(arr) {
