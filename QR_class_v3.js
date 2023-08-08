@@ -343,8 +343,8 @@ function array_qr(test){
        /* var jar2= jar.join("");
         alert(jar2);
         const kioo= document.getElementById("txt").value;
-     CreateTextFile(LZString.decompressFromBase64(jar2),kioo);
-    }*/
+     CreateTextFile(LZString.decompressFromBase64(jar2),kioo);*/
+    }
 function array_qr_combine(test){
     function removeDuplicates(arr) {
         return arr.filter((item,
