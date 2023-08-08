@@ -340,10 +340,13 @@ function array_qr(test){
     }
         var jar= removeDuplicates_n(test.iterated);
         alert(jar);
-       /* var jar2= jar.join("");
-        alert(jar2);
+        var jar2=[];
+        for(let i=0;i<test.iterated.length;i++){
+            jar2[i]=LZString.decompressFromBase64((test.iterated)[i]);}
+        var jar3= jar2.join("");
+        alert(jar3);
         const kioo= document.getElementById("txt").value;
-     CreateTextFile(LZString.decompressFromBase64(jar2),kioo);*/
+     CreateTextFile(jar3,kioo);
     }
 function array_qr_combine(test){
     function removeDuplicates(arr) {
