@@ -69,7 +69,6 @@ class Mashup {
         var p3 = convertBase(solution,2,16).toUpperCase();
         this.mashup=p3;
         console.log("Mashup: "+p3);
-        alert("Mashup: "+p3);
         QR_gen(this.mashup);
         document.getElementById('qrcode').style.display = 'none';
   }}
@@ -362,6 +361,19 @@ function mashup_driver(){
     var key= document.getElementById("Personal_1").value;
     test.setter(info,key);
     test.mashup_(info,key);
+}
+function mashup_driver_vid(){
+    const str_gen = document.getElementById("output").textContent;
+    const str_name = document.getElementById("keylist").value;
+    const str_array = str_gen.split('/');
+    const str_key_array=str_name.split(',');
+    for(let i=0;i<str_array.length;i++){
+    var test = new Mashup();
+    var info =str_array[i];
+    var key= str_key_array[i];
+    test.setter(info,key);
+    test.mashup_(info,key);}
+    document.getElementById('qrcode2').style.display = 'none';
 }
 function mashup_driver_demo(){
     var test = new Mashup();
