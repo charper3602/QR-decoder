@@ -362,18 +362,6 @@ function mashup_driver(){
     test.setter(info,key);
     test.mashup_(info,key);
 }
-function mashup_driver_vid(){
-    const str_gen = document.getElementById("output").textContent;
-    const str_name = document.getElementById("keylist").value;
-    const str_array = str_gen.split('/');
-    const str_key_array=str_name.split(',');
-    for(let i=0;i<str_array.length;i++){
-    var test = new Mashup();
-    var info =str_array[i];
-    var key= str_key_array[i];
-    test.setter(info,key);
-    test.mashup_(info,key);}
-}
 function mashup_driver_demo(){
     var test = new Mashup();
     var info =document.getElementById("Information").value;
