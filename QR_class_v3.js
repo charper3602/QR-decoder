@@ -70,7 +70,7 @@ class Mashup {
         this.mashup=p3;
         console.log("Mashup: "+p3);
         QR_gen(this.mashup);
-        document.getElementById('qrcode').style.display = 'none';
+        document.getElementById('qrcode2').style.display = 'none';
   }}
   reverse_mashup(mash,key){
     if((mash=='')||(key=='')){
@@ -213,7 +213,7 @@ function parseBigInt(bigint, base) {
   }
 function QR_gen(p3){
     makeQR = (your_data) => {
-        let qrcodeContainer = document.getElementById("qrcode");
+        let qrcodeContainer = document.getElementById("qrcode2");
           qrcodeContainer.innerHTML = "";
           new QRious({
             element: qrcodeContainer,
@@ -228,7 +228,7 @@ function QR_gen(p3){
     function downloadQR() {
           var link = document.createElement('a');
           link.download = 'Mashup.png';
-          link.href = document.getElementById('qrcode').toDataURL()
+          link.href = document.getElementById('qrcode2').toDataURL()
           link.click();
       } 
        var P3 = p3.toString();
@@ -373,7 +373,6 @@ function mashup_driver_vid(){
     var key= str_key_array[i];
     test.setter(info,key);
     test.mashup_(info,key);}
-    document.getElementById('qrcode2').style.display = 'none';
 }
 function mashup_driver_demo(){
     var test = new Mashup();
