@@ -1,3 +1,4 @@
+var limit_c=1500;
 class Mashup {
     #key;
     #information;
@@ -10,9 +11,9 @@ class Mashup {
      this.iterated= [];
   }
   mashup_(info,key){
-    if((info=='')||(key=='')){
-        console.log("Missing Feild");
-       alert("Missing Feild");
+    if((info=='')||(key=='')||(info.length>limit_c)||(key.length>limit_c)){
+        console.log("Missing Feild/Overflow");
+       alert("Missing Feild/Overflow");
     }
     else{
         this.#information=info;
@@ -74,9 +75,9 @@ class Mashup {
         document.getElementById('qrcode').style.display = 'none';
   }}
   reverse_mashup(mash,key){
-    if((mash=='')||(key=='')){
-        console.log("Missing Feild");
-       alert("Missing Feild");
+    if((mash=='')||(key=='')||(info.length>limit_c)||(key.length>limit_c)){
+        console.log("Missing Feild/Overflow");
+       alert("Missing Feild/Overflow");
     }
     else{
     this.mashup=mash;
