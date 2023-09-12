@@ -315,8 +315,12 @@ function combine_scanner(test){
          console.log(decodedText);
          test.iterated.push(decodedText);
          test.iterated=array_qr_combine(test);
-        if((test.iterated.length>1)&&(indicator==0)){
+        if((test.iterated.length>1)&&(indicator==0)&&(((test.iterated[0]).length)>=((test.iterated[1]).length)){
             test.reverse_mashup((test.iterated)[0],(test.iterated)[1]);
+            indicator=1;
+        }
+         if((test.iterated.length>1)&&(indicator==0)&&(((test.iterated[0]).length)<((test.iterated[1]).length)){
+            test.reverse_mashup((test.iterated)[1],(test.iterated)[0]);
             indicator=1;
         }
     }
