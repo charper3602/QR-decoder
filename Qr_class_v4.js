@@ -140,7 +140,7 @@ class Mashup {
       }
     }
     if(isValidUrl(p3)){
-    alert("Information: "+p3); 
+    console.log("Information: "+p3); 
     window.location.replace(p3);}
       else{
           alert("Access denied");}
