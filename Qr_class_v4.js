@@ -1,4 +1,4 @@
-var limit_c=1500;
+ var limit_c=1500;
 class Mashup {
     #key;
     #information;
@@ -75,7 +75,7 @@ class Mashup {
         document.getElementById('qrcode').style.display = 'none';
   }}
   reverse_mashup(mash,key){
-    if((mash=='')||(key=='')||(info.length>limit_c)||(key.length>limit_c)){
+    if((mash=='')||(key=='')||(mash.length>limit_c)||(key.length>limit_c)){
         console.log("Missing Feild/Overflow");
        alert("Missing Feild/Overflow");
     }
@@ -316,11 +316,11 @@ function combine_scanner(test){
          console.log(decodedText);
          test.iterated.push(decodedText);
          test.iterated=array_qr_combine(test);
-        if((test.iterated.length>1)&&(indicator==0)&&(((test.iterated[0]).length)>=((test.iterated[1]).length)){
+        if((test.iterated.length>1)&&(indicator==0)&&((((test.iterated)[0]).length)>=(((test.iterated)[1]).length))){
             test.reverse_mashup((test.iterated)[0],(test.iterated)[1]);
             indicator=1;
         }
-         if((test.iterated.length>1)&&(indicator==0)&&(((test.iterated[0]).length)<((test.iterated[1]).length)){
+         if((test.iterated.length>1)&&(indicator==0)&&((((test.iterated)[0]).length)<(((test.iterated)[1]).length))){
             test.reverse_mashup((test.iterated)[1],(test.iterated)[0]);
             indicator=1;
         }
